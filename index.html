@@ -1,6 +1,25 @@
 <html>
 
 <head>
+  
+   <script type="text/javascript">
+function zegar()
+{
+//pobranie aktualnej godziny, minuty i sekundy
+var czas = new Date();
+godzina = czas.getHours(); if (godzina <= 9) {godzina = "0"+godzina;}
+minuta = czas.getMinutes(); if (minuta <= 9) {minuta = "0"+minuta;}
+sekunda = czas.getSeconds(); if (sekunda <= 9) {sekunda = "0"+sekunda;}
+
+ 
+//wyswietlenie godziny w polu formularza
+//zapis przypisania do pola formularza wyglada tak:
+document.forms["zegarek"].elements["pokaz"].value = godzina + ":" + minuta + ":" + sekunda;
+} </script>
+
+ 
+setInterval("zegar()",1000); 
+ 
 
 </head>
 <body>
@@ -8,6 +27,12 @@
 <h2> Witaj przybyszu</h2>
 
 <p> Na tej stronie testujemy mozliwosci wersjonowania plikow w github </p>
+  
+  <form id="zegarek">
+<input type="text" value="" name="pokaz" style="width: 80px;" />
+</form> 
+  
+  
 
 </body>
 </html>
