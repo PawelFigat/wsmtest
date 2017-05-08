@@ -15,10 +15,14 @@ sekunda = czas.getSeconds(); if (sekunda <= 9) {sekunda = "0"+sekunda;}
 //wyswietlenie godziny w polu formularza
 //zapis przypisania do pola formularza wyglada tak:
 document.forms["zegarek"].elements["pokaz"].value = godzina + ":" + minuta + ":" + sekunda;
-} </script>
+}
+  
+  setInterval("zegar()",1000); 
+     
+  </script>
 
  
-setInterval("zegar()",1000); 
+
  
 
 </head>
